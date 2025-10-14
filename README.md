@@ -102,12 +102,12 @@ Or run it directly in [Google Colab](https://colab.research.google.com/github/Kn
 The simulation allows you to configure:
 
 ```python
-L = 5             # Number of sites
-J = 1.0           # Hopping strength
-V0 = 1000.0 * J   # Driving amplitude (V0 >> J for high-frequency regime)
-T_period = 2*π/V0 # Driving period (high-frequency limit)
-n_periods = 10    # Number of periods to simulate
-dt = T_period/50  # Time step for numerical integration
+L = 5               # Number of sites
+J = 1.0             # Hopping strength
+V0 = 1000.0 * J     # Driving amplitude (V0 >> J for high-frequency regime)
+T_period = 2*np.pi/V0  # Driving period (high-frequency limit)
+n_periods = 10      # Number of periods to simulate
+dt = T_period/50    # Time step for numerical integration
 ```
 
 ### Initial State Specification
