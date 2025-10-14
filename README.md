@@ -22,9 +22,10 @@ where:
 - **Hopping term**: `H₁ = J Σᵢ (Sᵢ⁺ Sᵢ₊₁⁻ + H.c.)`
 - **Driving term**: `H₂(t) = Σᵢ V(t) (Sᵢᶻ)²`
 
-Here, `Sᵢ±` and `Sᵢᶻ` are the standard spin-1 operators at site `i`. The driving is typically chosen as:
-- `V(t) = V₀ cos(ωt)` with `V₀ >> J` (high-frequency regime)
-- Period: `T = 2π/ω`
+Here, `Sᵢ±` and `Sᵢᶻ` are the standard spin-1 operators at site `i`. The driving is implemented as a **square wave**:
+- `V(t) = -V₀` for `0 < t mod T < T/2`
+- `V(t) = +V₀` for `T/2 < t mod T < T`
+- Period: `T = 2π/V₀` (high-frequency regime with `V₀ >> J`)
 
 ### Floquet Hamiltonian
 
@@ -101,11 +102,12 @@ Or run it directly in [Google Colab](https://colab.research.google.com/github/Kn
 The simulation allows you to configure:
 
 ```python
-L = 5           # Number of sites
-J = 1.0         # Hopping strength
-V0 = 1000.0     # Driving amplitude (V0 >> J for high-frequency regime)
-T_period = 2π/V0  # Driving period
-n_periods = 10  # Number of periods to simulate
+L = 5             # Number of sites
+J = 1.0           # Hopping strength
+V0 = 1000.0 * J   # Driving amplitude (V0 >> J for high-frequency regime)
+T_period = 2*π/V0 # Driving period (high-frequency limit)
+n_periods = 10    # Number of periods to simulate
+dt = T_period/50  # Time step for numerical integration
 ```
 
 ### Initial State Specification
