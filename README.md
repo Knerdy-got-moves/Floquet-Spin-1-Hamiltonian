@@ -29,17 +29,17 @@ Here, `Sᵢ±` and `Sᵢᶻ` are the standard spin-1 operators at site `i`. The 
 
 ### Floquet Hamiltonian
 
-In the high-frequency limit, the effective Floquet Hamiltonian can be derived using Magnus expansion:
+$$
+H_F^{(1)} = \frac{i\hbar}{T} U_1^{(1)}(T,0) = \frac{i\hbar}{T} (T_1 + T_2) $$
+$$= \sum_{i}\left[\delta_{X_{nm}, 0} + (1-\delta_{X_{nm}, 0}) \frac{\sin(V_0 T X_{nm}/(2\hbar))}{V_0 T X_{nm}/(2\hbar)} e^{i V_0 T X_{nm}/(2\hbar)} \right] (S_i^+ S_{i+1}^- + H.C.),
+$$ where, the interaction term is: 
+$$   H_1 = J \sum_i (S_i^+ S_{i+1}^- + H.C.)
+    $$
+and the local operator is defined as :
+$$
+\hat{X}_i = \left[\frac{1}{2} - (S_i^z)^2\right] + \left[\frac{1}{2} - (S_{i+1}^z)^2\right]
+$$
 
-```
-H_F = (iℏ/T) log[U(T,0)]
-```
-
-The effective Hamiltonian includes modified hopping terms with amplitude renormalization and phase factors dependent on the local spin configuration through the operator:
-
-```
-X̂ᵢ = [1/2 - (Sᵢᶻ)²] + [1/2 - (Sᵢ₊₁ᶻ)²]
-```
 
 ### Hilbert Space Fragmentation
 
@@ -236,9 +236,6 @@ This work builds upon concepts from:
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License
-
-This project is open source and available under the MIT License.
 
 ## Citation
 
@@ -260,4 +257,4 @@ For questions or collaboration opportunities, please open an issue on GitHub.
 
 ---
 
-**Keywords**: Floquet systems, Hilbert space fragmentation, spin-1 chains, quantum dynamics, exact diagonalization, non-equilibrium quantum physics, quantum many-body systems
+**Keywords**: Floquet systems, Hilbert space fragmentation, spin-1 chains, quantum dynamics, exact diagonalisation, non-equilibrium quantum physics, quantum many-body systems
